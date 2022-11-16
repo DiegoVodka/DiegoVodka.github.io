@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acerca de Nosotros</title>
+<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/estilos.css">
+
+<meta name="theme-color" content="#2091F9">
+
+    <meta name="title" content="Aprende CSS desde cero">
+    <meta name="description"
+        content="Hola, soy una descripción que verás cuando busques algo de mi temática en Google.">
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexcgdesign.github.io">
+    <meta property="og:title" content="Aprende CSS desde cero">
+    <meta property="og:description"
+        content="Hola, soy una descripción que verás cuando busques algo de mi temática en Google.">
+    <meta property="og:image" content="https://alexcgdesign.github.io/images/css.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.jordanalex.com/">
+    <meta property="twitter:title" content="Aprende CSS desde cero">
+    <meta property="twitter:description"
+        content="Hola, soy una descripción que verás cuando busques algo de mi temática en Google.">
+    <meta property="twitter:image" content="https://alexcgdesign.github.io/images/css.jpg">
+
+    <header class="hero">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <h2 class="nav__title">PHOTOEDITION</h2>
+            </div>
+
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__items">
+                    <a href="index.html" class="nav__links">Inicio</a>
+                </li>
+                <li class="nav__items">
+                    <a href="Acerca.html" class="nav__links">Acerca de</a>
+                </li>
+                <li class="nav__items">
+                    <a href="fotogaleria.html" class="nav__links">Fotogaleria</a>
+                </li>
+                <li class="nav__items">
+                    <a href="contacto.html" class="nav__links">Contacto</a>
+                </li>
+
+                <img src="./images/close.svg" class="nav__close">
+            </ul>
+
+        </nav>
+
+<style>
+
+    
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<body>
+
+<section style="display: block;"></section>
+<h2 style="text-align:center">Fotogaleria</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <img src="images/family-with-their-little-daughter-in-an-autumn-field.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="images/cute-family-playing-in-summer-field.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="images/IMG_3745.JPG" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <img src="images/halloween-wallpaper-with-evil-pumpkins.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <img src="images/54338.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+
+
+<ul class="nav__link nav__link--menu">
+    <li class="nav__items">
+        <a href="index.html" class="nav__links">Inicio</a>
+    </li>
+    <li class="nav__items">
+        <a href="Acerca.html" class="nav__links">Acerca de</a>
+    </li>
+    <li class="nav__items">
+        <a href="fotogaleria.html" class="nav__links">Fotogaleria</a>
+    </li>
+    <li class="nav__items">
+        <a href="contacto.html" class="nav__links">Contacto</a>
+    </li>
+
+    <img src="./images/close.svg" class="nav__close">
+</ul>
+
+</body>
+</html>
+
+
+    
